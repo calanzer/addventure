@@ -1,18 +1,22 @@
 //
 //  ViewController.swift
-//  Addventure
+//  addventure
 //
-//  Created by Christian  on 4/19/17.
+//  Created by Christian  on 3/21/17.
 //  Copyright © 2017 Chrstian Lanzer. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        self.tabBar.isHidden = true
+        
+        let customTabBar = CustomTabBar(frame: self.tabBar.frame)
+        self.view.addSubview(customTabBar)
     }
 
     override func didReceiveMemoryWarning() {
