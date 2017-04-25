@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="DcG-Rm-MiW">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="hYa-yU-KIi">
+            <objects>
+                <viewController storyboardIdentifier="SearchPage" id="2Mx-2s-4y0" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kMR-VA-hXv"/>
+                        <viewControllerLayoutGuide type="bottom" id="SRa-Mo-8wf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pB3-Uy-QGV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Search" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WaI-eX-nKR">
+                                <rect key="frame" x="227" y="285" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="search" id="wH0-1g-iys"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pcm-Gb-6R7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="533" y="-332"/>
+        </scene>
+        <!--AddNewPage-->
+        <scene sceneID="iZv-cd-QcL">
+            <objects>
+                <viewController title="AddNewPage" id="vJH-mt-YYe" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8gJ-iC-1sR"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qff-vB-L7t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Exz-r4-lQY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add New" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zyK-zD-bRV">
+                                <rect key="frame" x="264" y="235" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="add" id="ltt-sl-VJ0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AfD-A7-hK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="533" y="357"/>
+        </scene>
+        <!--ProfilePage-->
+        <scene sceneID="5B7-RE-r9i">
+            <objects>
+                <viewController title="ProfilePage" id="Hel-N9-hi1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VLo-mL-c7n"/>
+                        <viewControllerLayoutGuide type="bottom" id="nDt-TS-dL4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XgD-gi-7cS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Profile" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tgd-9B-m0U">
+                                <rect key="frame" x="276" y="262" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" image="profile" id="sqY-kg-Fn3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s25-BZ-4q4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="533" y="1796"/>
+        </scene>
+        <!--HomePage-->
+        <scene sceneID="aQ3-1K-Rbw">
+            <objects>
+                <viewController storyboardIdentifier="CataloguePage" title="CataloguePage" id="aof-LF-I0E" userLabel="HomePage" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vzB-Ls-dJZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="m3I-Tp-uYm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lFW-kY-AAU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Catalogue" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lhk-9u-fnd">
+                                <rect key="frame" x="232" y="167" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="layout" id="Agp-uE-clc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ncO-8t-vuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="533" y="1039"/>
+        </scene>
+        <!--HomePage-->
+        <scene sceneID="pDF-Vc-tzI">
+            <objects>
+                <viewController storyboardIdentifier="HomePage" title="HomePage" id="4am-7G-uyF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FOY-RU-Phu"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Fo-Cv-KYy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wdb-ET-26Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Home" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XUE-WG-qCI">
+                                <rect key="frame" x="252" y="193" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="home" id="JhI-B5-Qej"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jja-w6-F60" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="533" y="-1080"/>
+        </scene>
+        <!--Custom Tab Bar View Controller-->
+        <scene sceneID="TQq-e1-SBi">
+            <objects>
+                <tabBarController id="DcG-Rm-MiW" customClass="CustomTabBarViewController" customModule="addventure" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="gYn-jK-VoF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="4am-7G-uyF" kind="relationship" relationship="viewControllers" id="2T1-ad-A4i"/>
+                        <segue destination="2Mx-2s-4y0" kind="relationship" relationship="viewControllers" id="udR-NS-E3K"/>
+                        <segue destination="vJH-mt-YYe" kind="relationship" relationship="viewControllers" id="gfq-pG-5Vk"/>
+                        <segue destination="aof-LF-I0E" kind="relationship" relationship="viewControllers" id="bYa-hg-wAC"/>
+                        <segue destination="Hel-N9-hi1" kind="relationship" relationship="viewControllers" id="I1m-v3-zzS"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZT0-Go-crY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-925" y="196"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="add" width="32" height="32"/>
+        <image name="home" width="32" height="32"/>
+        <image name="layout" width="32" height="32"/>
+        <image name="profile" width="32" height="32"/>
+        <image name="search" width="32" height="32"/>
+    </resources>
+</document>
