@@ -15,7 +15,7 @@ class UsersViewController: UIViewController, UITabBarDelegate, UITableViewDelega
     
     @IBOutlet weak var TableView: UITableView!
     
-    var users = [User]()
+    var userArray = [User]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,34 +39,34 @@ class UsersViewController: UIViewController, UITabBarDelegate, UITableViewDelega
     
     
     func retrieveUsers () {
-        let ref = FIRDatabase.database().reference()
-        ref.child("users").queryOrderedByKey().observeSingleEvent(of: .value, with: {snapshot in
-            let users = snapshot.value as! [ String: AnyObject]
-            self.users.removeAll()
-            for (_,value) in users {
-                if let uid = value["uid"] as? String {
-                    if uid != FIRAuth.auth()?.currentUser!.uid{
-                        let userToShow = User(snapshot: snapshot)
-                        if let fullname = value["full name"] as? String, let imagePath = value["urlToImage"] as? String {
-                            userToShow.fullName = fullname
-                            userToShow.imagePath = imagePath
-                            userToShow.userID = uid
-                            self.users.append(userToShow)
-                        }
-                    }
+        dataBaseRef.child("users").observe(.value, with: { (snapshot) in
+            var results = [User]()
+            
+            for user in snapshot.children {
+                
+                let user = User(snapshot: user as! FIRDataSnapshot)
+                
+                if user.userID != FIRAuth.auth()!.currentUser!.uid {
+                    results.append(user)
                 }
+                
             }
-            self.TableView.reloadData()
-        })
-        ref.removeAllObservers()
+            
+            self.userArray = results.sorted(by: { (u1, u2) -> Bool in
+                u1.fullName < u2.fullName
+            })
+           self.TableView.reloadData()
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = TableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserCell
         
-        cell.userLabel.text = self.users[indexPath.row].fullName
-        cell.userID = self.users[indexPath.row].userID
-        cell.userImage.downloadImage(from: self.users[indexPath.row].imagePath!)
+        cell.userLabel.text = userArray[indexPath.row].fullName
+        cell.userID = userArray[indexPath.row].userID
+        cell.userImage.downloadImage(from: userArray[indexPath.row].imagePath!)
           checkFollowing(indexPath: indexPath)
         
         return cell
@@ -83,22 +83,22 @@ class UsersViewController: UIViewController, UITabBarDelegate, UITableViewDelega
             
             if let following = snapshot.value as? [String : AnyObject] {
                 for (ke, value) in following {
-                    if value as! String == self.users[indexPath.row].userID {
+                    if value as! String == self.userArray[indexPath.row].userID {
                         isFollower = true
                         
                         ref.child("users").child(uid).child("following/\(ke)").removeValue()
-                        ref.child("users").child(self.users[indexPath.row].userID).child("followers/\(ke)").removeValue()
+                        ref.child("users").child(self.userArray[indexPath.row].userID).child("followers/\(ke)").removeValue()
                         
                         self.TableView.cellForRow(at: indexPath)?.accessoryType = .none
                     }
                 }
             }
             if !isFollower {
-                let following = ["following/\(key)" : self.users[indexPath.row].userID]
+                let following = ["following/\(key)" : self.userArray[indexPath.row].userID]
                 let followers = ["followers/\(key)" : uid]
                 
                 ref.child("users").child(uid).updateChildValues(following)
-                ref.child("users").child(self.users[indexPath.row].userID).updateChildValues(followers)
+                ref.child("users").child(self.userArray[indexPath.row].userID).updateChildValues(followers)
                 
                 self.TableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
             }
@@ -114,7 +114,7 @@ class UsersViewController: UIViewController, UITabBarDelegate, UITableViewDelega
             
             if let following = snapshot.value as? [String : AnyObject] {
                 for (_, value) in following {
-                    if value as! String == self.users[indexPath.row].userID {
+                    if value as! String == self.userArray[indexPath.row].userID {
                         self.TableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
                     }
                 }
@@ -126,7 +126,7 @@ class UsersViewController: UIViewController, UITabBarDelegate, UITableViewDelega
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count ?? 0
+        return userArray.count ?? 0
     }
 
 }

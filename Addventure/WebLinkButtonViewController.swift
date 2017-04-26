@@ -10,6 +10,20 @@ import UIKit
 
 class WebLinkButtonViewController: UIViewController {
 
+    @IBAction func goToTutorial(_ sender: Any) {
+        let url = URL(string: "https://unity3d.com/learn/tutorials/topics/scripting/coding-unity-absolute-beginner")!
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+    }
+    
+    @IBAction func addPost(_ sender: Any) {
+        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "addNew") as! UploadViewController
+        self.navigationController?.pushViewController(secondViewController, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

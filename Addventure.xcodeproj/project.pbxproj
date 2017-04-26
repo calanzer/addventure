@@ -10,6 +10,7 @@
 		1E36E14676864D24D761B74B /* Pods_AddventureUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83D5A16A970B8320BE5C2A00 /* Pods_AddventureUITests.framework */; };
 		91DA9F98A69F8F9CD2CB1B3B /* Pods_Addventure.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA004D1F48CB90C44324878 /* Pods_Addventure.framework */; };
 		D11D3B151EAF8B4E007EE7D2 /* profileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11D3B141EAF8B4E007EE7D2 /* profileTableViewController.swift */; };
+		D11D3B171EB042BB007EE7D2 /* WebLinkButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11D3B161EB042BB007EE7D2 /* WebLinkButtonViewController.swift */; };
 		D128CDA91EA805910059DA45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D128CDA71EA805910059DA45 /* LaunchScreen.storyboard */; };
 		D128CDAA1EA805910059DA45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D128CDA81EA805910059DA45 /* Main.storyboard */; };
 		D128CDAC1EA8074B0059DA45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D128CDAB1EA8074B0059DA45 /* GoogleService-Info.plist */; };
@@ -61,6 +62,7 @@
 		A78679C9F882A342072B8F43 /* Pods_AddventureTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AddventureTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA8C7D1DF74FBF976466AD99 /* Pods-AddventureTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddventureTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AddventureTests/Pods-AddventureTests.release.xcconfig"; sourceTree = "<group>"; };
 		D11D3B141EAF8B4E007EE7D2 /* profileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = profileTableViewController.swift; sourceTree = "<group>"; };
+		D11D3B161EB042BB007EE7D2 /* WebLinkButtonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebLinkButtonViewController.swift; sourceTree = "<group>"; };
 		D128CDA71EA805910059DA45 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D128CDA81EA805910059DA45 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D128CDAB1EA8074B0059DA45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				D16FDA3B1EAF10710028DC4A /* user-placeholder.jpg */,
+				D11D3B161EB042BB007EE7D2 /* WebLinkButtonViewController.swift */,
 				D1AF7CAF1EABDA7B009AEEA8 /* SignupViewController.swift */,
 				D19FD7B01EAE6F1E00A76CA3 /* UsersViewController.swift */,
 				D1F48F6B1EA7FF20006B0575 /* CustomTabBarViewController.swift */,
@@ -529,6 +532,7 @@
 				D16FDA3A1EAF01BB0028DC4A /* HomeViewController.swift in Sources */,
 				D16CC1981EAEFE5200A6ACC1 /* Post.swift in Sources */,
 				D1AF7CB01EABDA7B009AEEA8 /* SignupViewController.swift in Sources */,
+				D11D3B171EB042BB007EE7D2 /* WebLinkButtonViewController.swift in Sources */,
 				D16B31E41EA7FE39005B5A08 /* ViewController.swift in Sources */,
 				D1F48F6E1EA7FF20006B0575 /* CustomTabBarViewController.swift in Sources */,
 				D1F48F6C1EA7FF20006B0575 /* CustomTabBar.swift in Sources */,
@@ -672,6 +676,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NDA6SX8WLX;
 				INFOPLIST_FILE = Addventure/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = calanzer.Addventure;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -686,6 +691,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NDA6SX8WLX;
 				INFOPLIST_FILE = Addventure/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = calanzer.Addventure;
 				PRODUCT_NAME = "$(TARGET_NAME)";

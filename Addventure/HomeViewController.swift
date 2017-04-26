@@ -18,19 +18,21 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        fetchPosts()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+       fetchPosts()
     }
     
     
     func fetchPosts(){
         
         let ref = FIRDatabase.database().reference()
-        
         ref.child("users").queryOrderedByKey().observeSingleEvent(of: .value, with: { snapshot in
             
             let users = snapshot.value as! [String : AnyObject]
-            
+            self.posts.removeAll()
+            self.following.removeAll()
             for (_,value) in users {
                 if let uid = value["uid"] as? String {
                     if uid == FIRAuth.auth()?.currentUser?.uid {
@@ -40,9 +42,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                             }
                         }
                         self.following.append(FIRAuth.auth()!.currentUser!.uid)
+                        print(self.following.count)
                         
                         ref.child("posts").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snap) in
-                            
                             
                             let postsSnap = snap.value as! [String : AnyObject]
                             
@@ -51,27 +53,29 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                                     for each in self.following {
                                         if each == userID {
                                             let posst = Post()
-                                            if let author = post["author"] as? String, let likes = post["likes"] as? Int, let pathToImage = post["pathToImage"] as? String, let postID = post["postID"] as? String {
+                                            if let author = post["author"] as? String, let likes = post["likes"] as? Int, let pathToImage = post["pathToImage"] as? String, let postID = post["postID"] as? String, let postdescription = post["postDescription"] as? String {
                                                 
                                                 posst.author = author
                                                 posst.likes = likes
                                                 posst.pathToImage = pathToImage
                                                 posst.postID = postID
                                                 posst.userID = userID
+                                                posst.postDescription = postdescription
+                                                
                                                 
                                                 self.posts.append(posst)
+                                                
                                             }
                                         }
                                     }
-                                    
-                                    self.collectionview.reloadData()
+                                    print(self.posts.count)
+                                   self.collectionview.reloadData()
                                 }
                             }
                         })
-                    }
+                    }  
                 }
             }
-            
         })
         ref.removeAllObservers()
     }
@@ -91,6 +95,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         cell.authorLabel.text = self.posts[indexPath.row].author
         cell.likeLabel.text = "\(self.posts[indexPath.row].likes!) Likes"
         cell.postID = self.posts[indexPath.row].postID
+        cell.postDescription.text = self.posts[indexPath.row].postDescription
+      
         
         return cell
     }

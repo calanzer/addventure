@@ -17,6 +17,8 @@ class User: NSObject {
     var imagePath: String!
     var ref: FIRDatabaseReference?
     var key: String?
+    var bibligraphy: String?
+    var trophies: Double?
     
     init(snapshot: FIRDataSnapshot){
         
@@ -25,6 +27,8 @@ class User: NSObject {
         userID = (snapshot.value! as! NSDictionary)["uid"] as! String
         fullName = (snapshot.value! as! NSDictionary)["full name"] as! String
         imagePath = (snapshot.value! as! NSDictionary)["urlToImage"] as! String
+        bibligraphy = (snapshot.value! as! NSDictionary)["bibliography"] as! String
+        trophies = (snapshot.value! as! NSDictionary) ["trophies"] as! Double
         
     }
     

@@ -14,6 +14,8 @@ class PostCell: UICollectionViewCell {
     @IBOutlet weak var postImage: UIImageView!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var likeLabel: UILabel!
+    @IBOutlet weak var postDescription: UILabel!
+    
     
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var unlikeButton: UIButton!

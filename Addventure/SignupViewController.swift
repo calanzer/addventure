@@ -10,7 +10,8 @@ import UIKit
 import Firebase
 
 class SignupViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
+    
+    @IBOutlet weak var bibliographyField: UITextField!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -50,7 +51,7 @@ class SignupViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     
     @IBAction func nextPressed(_ sender: Any) {
-        guard nameField.text != "", emailField.text != "", passwordField.text != "", confirmPasswordField.text != "" else {
+        guard nameField.text != "", emailField.text != "", passwordField.text != "", confirmPasswordField.text != "", bibliographyField.text != "" else {
             return
         }
         
@@ -79,15 +80,17 @@ class SignupViewController: UIViewController, UIImagePickerControllerDelegate, U
                             if er != nil {
                                 print(err!.localizedDescription)
                             }
-                                 
+                            let trophies = 0
                             if let url = url {
                                 let userInfo: [String: Any] = ["uid" : user.uid,
                                                                "full name" : self.nameField.text,
-                                                               "urlToImage" : url.absoluteString]
+                                                               "urlToImage" : url.absoluteString,
+                                                                "bibliography" : self.bibliographyField.text,
+                                                                "trophies": trophies ]
                             self.ref.child("users").child(user.uid).setValue(userInfo)
                                 
                             let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainView")
-                                    
+                                
                                 self.present(vc, animated: true, completion: nil)
                             
                             }

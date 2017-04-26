@@ -98,7 +98,7 @@ class CustomTabBar: UIView {
     
     func createTabBarItemSelectionOverlay(_ containers: [CGRect]) {
         // 1
-        let overlayColors = [UIColor.blue, UIColor.blue, UIColor.blue,UIColor.blue,UIColor.blue]
+        let overlayColors = [UIColor.cyan, UIColor.blue, UIColor.blue,UIColor.blue,UIColor.blue]
         
         // 2
         for index in 0..<tabBarItems.count {
@@ -122,7 +122,8 @@ class CustomTabBar: UIView {
         leftMask = UIView(frame: CGRect(x: 0, y: 0, width: leftOverlaySlidingMultiplier, height: self.frame.height))
         leftMask.backgroundColor = UIColor.yellow
         rightMask = UIView(frame: CGRect(x: rightOverlaySlidingMultiplier, y: 0, width: tabBarItemWidth * CGFloat(tabBarItems.count - 1), height: self.frame.height))
-        rightMask.backgroundColor = UIColor.yellow
+        rightMask.backgroundColor = UIColor(red:0, green: 153, blue: 222,alpha: 1)
+        
         
         self.addSubview(leftMask)
         self.addSubview(rightMask)

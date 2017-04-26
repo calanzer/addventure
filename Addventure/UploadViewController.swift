@@ -14,6 +14,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
     @IBOutlet weak var selectBtn: UIButton!
     @IBOutlet weak var previewImage: UIImageView!
     @IBOutlet weak var postBtn: UIButton!
+    @IBOutlet weak var postdescriptionField: UITextView!
     
     var picker = UIImagePickerController()
     
@@ -66,14 +67,15 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
                                 "pathToImage" : url.absoluteString,
                                 "likes" : 0,
                                 "author" : FIRAuth.auth()!.currentUser!.displayName!,
-                                "postID" : key] as [String : Any]
+                                "postID" : key,
+                                "postDescription" : self.postdescriptionField.text!] as [String : Any]
                     
                     let postFeed = ["\(key)" : feed]
                     
                     ref.child("posts").updateChildValues(postFeed)
                     AppDelegate.instance().dismissActivityIndicatos()
                     
-                    self.tabBarController?.selectedIndex = 1
+                    self.tabBarController?.selectedIndex = 0
                 }
             })
             
