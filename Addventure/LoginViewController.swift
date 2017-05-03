@@ -16,9 +16,10 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
-
+    
+    
     @IBAction func loginPressed(_ sender: Any) {
         guard emailField.text != "", passwordField.text != "" else {return}
         FIRAuth.auth()?.signIn(withEmail: emailField.text!, password: passwordField.text!, completion: { (user, error) in
@@ -32,5 +33,7 @@ class LoginViewController: UIViewController {
             }
         })
     }
-    
 }
+
+
+

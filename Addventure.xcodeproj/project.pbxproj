@@ -15,6 +15,7 @@
 		D128CDAA1EA805910059DA45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D128CDA81EA805910059DA45 /* Main.storyboard */; };
 		D128CDAC1EA8074B0059DA45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D128CDAB1EA8074B0059DA45 /* GoogleService-Info.plist */; };
 		D13A55E11EAEB73F00C33211 /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13A55E01EAEB73F00C33211 /* UploadViewController.swift */; };
+		D1572D2F1EBA42A200E3677B /* KnowYourToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1572D2E1EBA42A200E3677B /* KnowYourToolsViewController.swift */; };
 		D16B31E21EA7FE39005B5A08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16B31E11EA7FE39005B5A08 /* AppDelegate.swift */; };
 		D16B31E41EA7FE39005B5A08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16B31E31EA7FE39005B5A08 /* ViewController.swift */; };
 		D16B31E91EA7FE39005B5A08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D16B31E81EA7FE39005B5A08 /* Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		D128CDA81EA805910059DA45 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D128CDAB1EA8074B0059DA45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D13A55E01EAEB73F00C33211 /* UploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		D1572D2E1EBA42A200E3677B /* KnowYourToolsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowYourToolsViewController.swift; sourceTree = "<group>"; };
 		D16B31DE1EA7FE39005B5A08 /* Addventure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Addventure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16B31E11EA7FE39005B5A08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16B31E31EA7FE39005B5A08 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				D1AF7CB11EABF516009AEEA8 /* LoginViewController.swift */,
 				D16FDA391EAF01BB0028DC4A /* HomeViewController.swift */,
 				D11D3B141EAF8B4E007EE7D2 /* profileTableViewController.swift */,
+				D1572D2E1EBA42A200E3677B /* KnowYourToolsViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 			files = (
 				D19FD7AF1EAE6E7F00A76CA3 /* UserCell.swift in Sources */,
 				D13A55E11EAEB73F00C33211 /* UploadViewController.swift in Sources */,
+				D1572D2F1EBA42A200E3677B /* KnowYourToolsViewController.swift in Sources */,
 				D16CC19A1EAEFF4C00A6ACC1 /* PostCell.swift in Sources */,
 				D11D3B151EAF8B4E007EE7D2 /* profileTableViewController.swift in Sources */,
 				D19FD7B11EAE6F1E00A76CA3 /* UsersViewController.swift in Sources */,

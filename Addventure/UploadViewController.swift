@@ -10,24 +10,34 @@ import UIKit
 import Firebase
 
 class UploadViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+
     
     @IBOutlet weak var selectBtn: UIButton!
     @IBOutlet weak var previewImage: UIImageView!
     @IBOutlet weak var postBtn: UIButton!
     @IBOutlet weak var postdescriptionField: UITextView!
     
+    
+    
     var picker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
            picker.delegate = self
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+         view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
     }
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+    
     
     @IBAction func selectPressed(_ sender: Any) {
         picker.allowsEditing = true
         picker.sourceType = .photoLibrary
-        
+       
         self.present(picker, animated: true, completion: nil)
     }
     
@@ -40,6 +50,7 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         self.dismiss(animated: true, completion: nil)
     }
+    
 
     @IBAction func postPressed(_ sender: Any) {
         
